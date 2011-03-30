@@ -1,0 +1,9 @@
+__device__ unsigned int default_hash(const void * key, const unsigned int keysize){
+       unsigned long hash = 5381;
+       char *str = (char *)key;
+       for (int i = 0; i < keysize; i++)
+       {
+	       hash = ((hash << 5) + hash) + ((int)str[i]); /* hash * 33 + c */
+       }
+       return hash;
+}

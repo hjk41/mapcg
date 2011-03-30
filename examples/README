@@ -1,0 +1,32 @@
+1. stringmatch  
+	This program searches for a keyword in a text file
+
+2. invertedindex
+	This program performs inverted index with a set of HTML files
+
+3. similarityscore
+	Calculates the similarity of a set of points represented as vectors
+
+4. matrixmultiplication
+	N*N matrix multiplication
+
+5. pageviewcount
+	Counts how many times each page has been visited by parsing a log file
+
+6. kmeans
+	K-Means clustering
+
+7. nbody 
+	N-Body simulation
+
+8. wordcount  
+	Counts how many times each word occurs in a given text file
+
+simple
+	A simple test program which counts how many times each number appears
+	in a randomly generated array.
+
+
+-----------------------------
+
+For information and test data, refer to the run.sh files in each directory.

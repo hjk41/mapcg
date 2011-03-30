@@ -1,0 +1,85 @@
+/*=============================================
+*  MapCG: MapReduce for CPU and GPU  ver 0.9
+*=============================================*/
+
+TOC:
+1. What is MapCG
+2. How to install & use
+3. Structure of MapCG
+4. Bug reporting
+
+
+1. WHAT IS MAPCG
+-----------------
+
+  MapCG is an efficient MapReduce implementation that works on both CPU
+  and GPU. With MapCG, one can write a MapReduce program and execute it
+  on both CPU and GPU without any modification to the source code. The
+  framework is provided as a library with source code. Programmers can
+  write code that invokes this library, compile it with proper compiler
+  and the resulting executable should be able to run on both CPU and 
+  GPU.
+
+  Currently, MapCG is tested on Linux only. Porting to other platforms
+  should be easy, because we use OpenMP as the multi-thread programming
+  modle. Any compiler that supports OpenMP should be able to compile 
+  MapCG and run it on CPU. For GPU, we use CUDA as the language for GPU
+  library. As a result, MapCG can only work with CUDA-enabled GPUs.
+  Again, the GPU part of MapCG is tested on Linux using NVCC. But it 
+  should also work for the Windows version of NVCC.
+
+
+2. INSTALL & USE
+-----------------
+
+  The MapCG library is distributed as source code. No installation is
+  required to use it. 
+
+  To use MapCG, the programmer should write several source files 
+  specifying the functions needed by the MapReduce framework, such as 
+  map() and reduce(). For beginners, we suggest starting from the sample
+  programs provided with this distribution. It should be easier to
+  modify the sample programs into a new program than to write one from
+  scratch.
+
+  Once the program is written, you can compile it using the Makefile.
+  A compiler with OpenMP support is required to compile the CPU code.
+  The GPU code is always compiled, MapCG requires NVCC to be installed 
+  on the machine. If the GPU implementation is not wanted, you can 
+  remove the directory and modify the Makefile so that you don't have to
+  install NVCC on your machine.
+
+  The Makefile will compile the program and generate an executable. The
+  executable can then be executed through command line.
+
+  For the sample programs, there are several command line options to 
+  control the execution. One important option is the -exe_mode option.
+  exe_mode specifies where the computation should be performed. it 
+  accepts 'CPU', 'GPU', and 'CPU_GPU'. For more information on all the
+  available options, please refer to HMM/HMMSchedulerSpec.cpp.
+
+
+3. STRUCTURE
+-----------------
+
+  The MapCG framework is composed of two parts: the CPULib, and GPULib.
+  The CPULib is the implementation of MapReduce on CPU, and GPULib is
+  the files related to GPU MapReduce. There are also files in HMM. They
+  act as a wrapper for both the CPU and GPU MapReduce framework. Because
+
+
+3. BUG REPORT
+-----------------
+  
+  MapCG is a research project. There must be bugs in the code. But as
+  a student, I am not able to devote all my time to testing. I would be
+  very glad if you can find the bugs for me. If you are not familiar
+  with OpenMP or CUDA, you can also send me the test case that would
+  reproduce the error. I will try to fix the bug as soon as possible.
+
+  Also, if you have suggestion as to how to improve the framework, 
+  please let me know. I would be more than happy if you tell me you 
+  are using MapCG in your work. :-)
+
+  You can reach me at 
+                chuntao.hong@gmail.com

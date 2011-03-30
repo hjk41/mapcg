@@ -1,0 +1,1 @@
+1. number of threads in a block was set to a limit of 256 in HMMHashTable

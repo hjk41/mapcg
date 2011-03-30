@@ -1,0 +1,40 @@
+#include "HMMGPUScheduler.h"
+#include "GPULib/HMMScheduler.h"
+#include <cuda.h>
+#include <stdio.h>
+
+/*
+class HMMGPUScheduler:public HMMScheduler{
+public:
+	~HMMScheduler();
+
+	void init(HMMSchedulerSpec & args);
+	void do_map_reduce();
+	OutputChunk get_output();
+};
+*/
+HMMGPUScheduler::HMMGPUScheduler(int device_num){
+#if 0
+	cudaSetDevice(device_num);
+#endif
+	int i;
+	cudaGetDevice(&i);
+	printf("thread %d is now in device %d\n", device_num+1, i);
+}
+
+HMMGPUScheduler::~HMMGPUScheduler(){
+	scheduler.finish_scheduler();
+}
+
+void HMMGPUScheduler::init(const HMMSchedulerSpec & args){
+	scheduler.init_scheduler(args);
+}
+
+void HMMGPUScheduler::do_map_reduce(){
+	scheduler.do_map_reduce();
+}
+
+OutputChunk HMMGPUScheduler::get_output(){
+	return scheduler.get_output();
+}
+

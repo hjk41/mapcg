@@ -1,0 +1,4 @@
+CPULib: MapReduce scheduler for CPU
+GPULib: MapReduce scheduler for GPU
+
+CommUtil: common utilities, also for user code

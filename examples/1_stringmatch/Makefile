@@ -1,7 +1,7 @@
 OPT=-O3 -g
 DEVICE_EMU=#-deviceemu
 CFLAGS=$(OPT) -fopenmp
-NVFLAGS=$(OPT) -arch=sm_20 $(DEVICE_EMU)
+NVFLAGS=$(OPT) -arch=sm_13 $(DEVICE_EMU)
 LDFLAGS=$(OPT)  -lgomp -lpthread
 #LDFLAGS=$(OPT) -liomp5 -lpthread -lirc -L/opt/intel/Compiler/11.0/074/lib/ia32
 CC=g++

@@ -71,7 +71,7 @@ __device__ unsigned int SMA_RoundToAlign(unsigned int size){
 	return (size+ALIGN_SIZE-1)&(~(ALIGN_SIZE-1));
 }
 __device__ unsigned int SMA_GetThreadID(){
-	return threadIdx.z*blockDim.y+threadIdx.y*blockDim.x+threadIdx.x;
+	return threadIdx.z*blockDim.y*blockDim.x+threadIdx.y*blockDim.x+threadIdx.x;
 }
 
 //============================

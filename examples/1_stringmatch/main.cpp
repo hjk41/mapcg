@@ -33,6 +33,7 @@ using namespace std;
 #include "HMM/UtilLib/HMMCommUtil.h"
 #include "HMM/UtilLib/HMMCommUtilTemplate.h"
 #include "DS.h"
+#include "HMM/HMMGlobalData.h"
 
 
 #define MAX_WORD_SIZE	255

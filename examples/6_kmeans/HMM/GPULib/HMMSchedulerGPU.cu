@@ -287,6 +287,7 @@ printtime("init time: %f \n", time_elapsed());
 
 	GlobalDeviceState h_device_state;
 	memcpyFromSymbol(&h_device_state, g_device_state);
+	::sync_global_data(g_state.global_data, h_device_state.global_data);
 	// initialize memory allocator
 	unsigned int memory_pool_size=getAllocatableMemSize(gpu_num);
 	unsigned int reserved_mem=RESERVED_MEM_SIZE+::get_global_data_size();

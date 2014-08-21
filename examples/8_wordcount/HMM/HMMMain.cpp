@@ -169,13 +169,13 @@ printlog("init_time: %f\n",time_elapsed());
 	pthread_t * cpu_threads=NULL;
 	if(args.exe_mode==GPU || args.exe_mode==CPU_GPU){
 		gpu_params=new Param[args.num_gpus];
-//		gpu_threads=new pthread_t[args.num_gpus];
+		gpu_threads=new pthread_t[args.num_gpus];
 		for(int i=0;i<args.num_gpus;i++){
 			gpu_params[i]=para;
 			gpu_params[i].type=SCHEDULER_GPU;
 			gpu_params[i].gpu_num=i;
-//			pthread_create(&gpu_threads[i], NULL, scheduler_worker, &gpu_params[i]);
-			scheduler_worker(&gpu_params[i]);
+			pthread_create(&gpu_threads[i], NULL, scheduler_worker, &gpu_params[i]);
+ //  		scheduler_worker(&gpu_params[i]);
 		}
 	}
 	if(args.exe_mode==CPU || args.exe_mode==CPU_GPU){

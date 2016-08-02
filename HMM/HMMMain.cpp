@@ -114,7 +114,6 @@ if(param->type==SCHEDULER_CPU)
 	printlog("CPU thread get a block\n");
 else
 	printlog("GPU thread %d get a block\n", param->gpu_num);
-sleep(0);
 			// process this job
 			local_args.input=job.input;
 			local_args.input_size=job.input_size;

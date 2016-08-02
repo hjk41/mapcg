@@ -92,7 +92,7 @@ void HMM_FUNC reduce(HMMKVs_t & kv, const global_data_t & global_data){
 	}
 	else{
 		int dim = global_data.dim;
-		int num_means = global_data.num_means;
+		//int num_means = global_data.num_means;
 		int* means = &(global_data.means[index*dim]);
 		unsigned int val_num = 0;
 
